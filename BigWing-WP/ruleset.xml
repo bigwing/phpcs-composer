@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
-<ruleset name="BigWing-WP">
+<ruleset name="BigWing-WP"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/squizlabs/PHP_CodeSniffer/master/phpcs.xsd">
+
 	<description>BigWing's PHP coding standards for WordPress projects.</description>
 
 	<arg name="extensions" value="php"/>
@@ -111,9 +113,10 @@
 		</properties>
 	</rule>
 
-	<!-- Set bigwing as the base prefix. Should be modified on a per-project basis. -->
+	<!-- Set "bigwing" as the base prefix for global functions, variables, and namespaces. -->
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
+			<!-- Add extend="true" to the local ruleset to append, otherwise it overwrites. -->
 			<property name="prefixes" type="array">
 				<element value="bigwing"/>
 			</property>
@@ -123,6 +126,7 @@
 	<!-- Set a default textdomain. Should be modified on a per-project basis. -->
 	<rule ref="WordPress.WP.I18n">
 		<properties>
+			<!-- Add extend="true" to the local ruleset to append, otherwise it overwrites. -->
 			<property name="text_domain" type="array">
 				<element value="bigwing"/>
 			</property>
