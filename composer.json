@@ -1,30 +1,33 @@
 {
-  "name": "bigwing/wp-phpcs-default",
+  "name": "bigwing/phpcs-composer",
   "type": "phpcodesniffer-standard",
   "version": "dev-master",
   "license": "MIT",
   "require": {
+    "php": ">=5.6.0,<8.0.0-dev",
     "squizlabs/php_codesniffer": "^3.4.0",
     "wp-coding-standards/wpcs": "^2.3",
-    "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
-    "phpcompatibility/phpcompatibility-wp": "^2.1",
+    "dealerdirect/phpcodesniffer-composer-installer": "*",
+    "phpcompatibility/phpcompatibility-wp": "*",
     "roave/security-advisories": "dev-master"
   },
   "prefer-stable": true,
+  "minimum-stability": "dev",
   "authors": [
+    {
+      "name": "Morgan Estes",
+      "email": "mestes@localiq.com",
+      "homepage": "https://bigwing.com"
+    },
     {
       "name": "Ephraim Gregor",
       "email": "ephraim.gregor@10up.com"
-    },
-    {
-      "name": "Morgan Estes",
-      "email": "mestes@localiq.com"
     }
   ],
   "scripts": {
     "config-cs": [
       "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run",
-      "\"vendor/bin/phpcs\" --config-set default_standard BigWing-Default"
+      "\"vendor/bin/phpcs\" --config-set default_standard BigWing-WP"
     ],
     "post-install-cmd": "@config-cs",
     "post-update-cmd": "@config-cs",

@@ -1,6 +1,14 @@
 <?xml version="1.0"?>
-<ruleset name="BigWing-Default">
-	<description>A base ruleset that all other BigWing rulesets should extend.</description>
+<ruleset name="BigWing-WP">
+	<description>BigWing's PHP coding standards for WordPress projects.</description>
+
+	<arg name="extensions" value="php"/>
+	<!-- Show sniff codes in all reports, and progress when running -->
+	<arg value="sp"/>
+	<!-- Strip the filepaths down to the relevant bit. -->
+	<arg name="basepath" value="./"/>
+	<!-- Enables parallel processing when available for faster results. -->
+	<arg name="parallel" value="8"/>
 
 	<exclude-pattern>*/phpunit.xml*</exclude-pattern>
 	<exclude-pattern>*/languages/*</exclude-pattern>
@@ -11,8 +19,12 @@
 	<exclude-pattern>*/node_modules/*</exclude-pattern>
 	<exclude-pattern>*/vendor/*</exclude-pattern>
 
+	<!-- Production-ready files -->
+	<exclude-pattern>*/build/*</exclude-pattern>
+	<exclude-pattern>*/dist/*</exclude-pattern>
+
 	<!-- Ensure certain file types aren't sniffed -->
-	<exclude-pattern>*\.(css|js)</exclude-pattern>
+	<exclude-pattern>*\.(s?(a|p?c)ss|jsx?)</exclude-pattern>
 
 	<!-- Don't worry about files that don't contain any code -->
 	<rule ref="Internal.NoCodeFound">
