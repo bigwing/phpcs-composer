@@ -1,15 +1,15 @@
-# 10up PHPCS Configuration
+# BigWing PHPCS Configuration
 
 > Composer library to provide drop in installation and configuration of [WPCS](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards) and [PHPCompatibilityWP](https://github.com/PHPCompatibility/PHPCompatibilityWP), setting reasonable defaults for WordPress development with nearly zero configuration.
 
-[![Support Level](https://img.shields.io/badge/support-active-green.svg)](#support-level) [![MIT License](https://img.shields.io/github/license/10up/phpcs-composer.svg)](https://github.com/10up/phpcs-composer/blob/master/LICENSE)
+[![Support Level](https://img.shields.io/badge/support-internal-blue.svg)](#support-level) [![MIT License](https://img.shields.io/github/license/bigwing/wp-phpcs-default.svg)](https://github.com/bigwing/wp-phpcs-default/blob/master/LICENSE)
 
 ## Installation
 
 Install the library via Composer:
 
 ```bash
-$ composer require --dev 10up/phpcs-composer:dev-master
+$ composer require --dev bigwing/wp-phpcs-default:dev-master
 ```
 
 That's it!
@@ -40,12 +40,12 @@ $ composer run lint
 
 ### Continuous Integration
 
-PHPCS Configuration plays nicely with Continuous Integration solutions. Out of the box, the library loads the `10up-Default` ruleset, and checks for syntax errors for PHP 7 or higher.
+PHPCS Configuration plays nicely with Continuous Integration solutions. Out of the box, the library loads the `BigWing-Default` ruleset, and checks for syntax errors for PHP 7.2 or higher.
 
-To override the default PHP version check, set the `--runtime-set testVersion 7.0-` configuration option. Example for PHP version 7.2 and above:
+To override the default PHP version check, set the `--runtime-set testVersion 7.2-` configuration option. Example for PHP version 7.4 and above:
 
 ```bash
-$ ./vendor/bin/phpcs --runtime-set testVersion 7.2-
+$ ./vendor/bin/phpcs --runtime-set testVersion 7.4-
 ```
 
 See more [information about specifying PHP version](https://github.com/PHPCompatibility/PHPCompatibility#sniffing-your-code-for-compatibility-with-specific-php-versions).
@@ -54,21 +54,21 @@ Note that you can only overrule PHP version check from the command-line.
 
 ### IDE Integration
 
-Some IDE integrations of PHPCS fail to register the `10up-Default` ruleset. In order to rectify this, place `.phpcs.xml.dist` at your project root:
+Some IDE integrations of PHPCS fail to register the `BigWing-Default` ruleset. In order to rectify this, place `.phpcs.xml.dist` at your project root:
 
 ```xml
 <?xml version="1.0"?>
 <ruleset name="Project Rules">
-	<rule ref="10up-Default" />
+	<rule ref="BigWing-Default" />
 </ruleset>
 ```
 
 ## Support Level
 
-**Active:** 10up is actively working on this, and we expect to continue work for the foreseeable future including keeping tested up to the most recent version of WordPress. Bug reports, feature requests, questions, and pull requests are welcome.
+**Internal:** BigWing is working on this for internal projects, and we expect to continue work for the foreseeable future including keeping tested up to the most recent version of WordPress. Bug reports, feature requests, questions, and pull requests are welcome.
 
-## Like what you see?
+## Thanks and Credits
 
-<p align="center">
-<a href="http://10up.com/contact/"><img src="https://10updotcom-wpengine.s3.amazonaws.com/uploads/2016/10/10up-Github-Banner.png" width="850"></a>
-</p>
+- 10up for their [PHPCS ruleset](https://github.com/10up/phpcs-composer) that this is based on.
+- The [WordPress Coding Standards contributors](https://github.com/WordPress/WordPress-Coding-Standards/graphs/contributors) for laying the groundwork for
+  standardized code sniffing in WordPress.
