@@ -27,7 +27,7 @@ If relying on Composer, edited the `composer.json` file by adding the following:
 ```json
 	"scripts": {
 		"lint": [
-			"phpcs ."
+			"phpcs . --standard=BigWing-WP"
 		],
 	}
 ```
@@ -40,7 +40,7 @@ $ composer run lint
 
 ### Continuous Integration
 
-PHPCS Configuration plays nicely with Continuous Integration solutions. Out of the box, the library loads the `BigWing-Default` ruleset, and checks for syntax errors for PHP 7.2 or higher.
+PHPCS Configuration plays nicely with Continuous Integration solutions. Out of the box, the library loads the `BigWing-WP` ruleset, and checks for syntax errors for PHP 7.2 or higher.
 
 To override the default PHP version check, set the `--runtime-set testVersion 7.2-` configuration option. Example for PHP version 7.4 and above:
 
@@ -54,12 +54,12 @@ Note that you can only overrule PHP version check from the command-line.
 
 ### IDE Integration
 
-Some IDE integrations of PHPCS fail to register the `BigWing-Default` ruleset. In order to rectify this, place `.phpcs.xml.dist` at your project root:
+Some IDE integrations of PHPCS fail to register the `BigWing-WP` ruleset. In order to rectify this, place `.phpcs.xml.dist` at your project root:
 
 ```xml
 <?xml version="1.0"?>
 <ruleset name="Project Rules">
-	<rule ref="BigWing-Default" />
+	<rule ref="BigWing-WP" />
 </ruleset>
 ```
 
