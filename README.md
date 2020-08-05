@@ -2,14 +2,14 @@
 
 > Composer library to provide drop in installation and configuration of [WPCS](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards) and [PHPCompatibilityWP](https://github.com/PHPCompatibility/PHPCompatibilityWP), setting reasonable defaults for WordPress development with nearly zero configuration.
 
-[![Support Level](https://img.shields.io/badge/support-internal-blue.svg)](#support-level) [![MIT License](https://img.shields.io/github/license/bigwing/wp-phpcs-default.svg)](https://github.com/bigwing/wp-phpcs-default/blob/master/LICENSE)
+[![Support Level](https://img.shields.io/badge/support-internal-blue.svg)](#support-level) [![MIT License](https://img.shields.io/github/license/bigwing/phpcs-composer.svg)](https://github.com/bigwing/phpcs-composer/blob/master/LICENSE)
 
 ## Installation
 
 Install the library via Composer:
 
 ```bash
-$ composer require --dev bigwing/wp-phpcs-default:dev-master
+$ composer require --dev bigwing/phpcs-composer:dev-master
 ```
 
 That's it!
