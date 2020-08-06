@@ -145,6 +145,11 @@
 		</properties>
 	</rule>
 
+	<!-- Add in some extra rules from other standards. -->
+	<rule ref="Generic.CodeAnalysis.UnusedFunctionParameter"/>
+	<rule ref="Generic.Commenting.Todo"/>
+	<rule ref="Squiz.Commenting.FunctionComment.SpacingAfter"/>
+
 	<!-- Loads the PHP Compatibility ruleset. -->
 	<rule ref="PHPCompatibilityWP" />
 </ruleset>
