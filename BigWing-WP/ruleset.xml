@@ -4,6 +4,14 @@
 
 	<description>BigWing's PHP coding standards for WordPress projects.</description>
 
+	<!-- For CI, don't fail on warnings -->
+	<config name="ignore_warnings_on_exit" value="1"/>
+	<!-- Sets the minimum supported WP version to 5.0, which is when Gutenberg was introduced. -->
+	<config name="minimum_supported_wp_version" value="5.0" />
+	<!-- PHP version check. Some older sites still need to run 7.2. -->
+	<config name="testVersion" value="7.2-"/>
+
+	<!-- Limit checks to PHP files (not any of the various php-type files). -->
 	<arg name="extensions" value="php"/>
 	<!-- Show sniff codes in all reports, and progress when running -->
 	<arg value="sp"/>
@@ -43,9 +51,6 @@
 		<severity>0</severity>
 	</rule>
 
-	<!-- For CI, don't fail on warnings -->
-	<config name="ignore_warnings_on_exit" value="1"/>
-
 	<!-- Enforce doc standards -->
 	<rule ref="WordPress-Docs">
 		<!-- Don't worry about capitalizing long lines -->
@@ -78,9 +83,6 @@
 		<!-- This nonce sniff almost never works right -->
 		<exclude name="WordPress.Security.NonceVerification.Missing"/>
 	</rule>
-
-	<!-- Sets the minimum supported WP version to 5.0, which is when Gutenberg was introduced. -->
-	<config name="minimum_supported_wp_version" value="5.0" />
 
 	<!-- Make missing translator comment a warning. -->
 	<rule ref="WordPress.WP.I18n.MissingTranslatorsComment">
@@ -145,7 +147,4 @@
 
 	<!-- Loads the PHP Compatibility ruleset. -->
 	<rule ref="PHPCompatibilityWP" />
-
-	<!-- PHP version check. Some older sites still need to run 7.2. -->
-	<config name="testVersion" value="7.2-"/>
 </ruleset>
